@@ -1,0 +1,25 @@
+<div class="fluid-container text-center">
+    <div clas="text-center" >
+        <form class="form" [formGroup]="reactiveForm">
+            <h2>Login </h2>
+            <div>
+            <div class="input">
+                <label for="email"><b>User Name:</b></label>
+                 <input class="input-field" type="text" id="email" placeholder="enter your user name..." formControlName="userName">
+                </div> 
+                <!-- <span>*Required field</span> -->
+              <div class="input">
+                <label for="password"><b>Password:</b></label>
+                <input class="input-field" type="password" id="password" placeholder="Enter your Password..."  formControlName="userPassword" >
+            </div>
+            <!-- <span>*Required field</span> --> 
+              <div class="buttons">
+                <button class="btn btn-success" (click)="onSubmit()">Login</button>
+                <button class="btn btn-danger" (click)="onReset()">Reset</button>
+              </div>
+                
+            </div>
+        </form>
+    </div>
+
+</div>

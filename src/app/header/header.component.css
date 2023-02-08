@@ -1,0 +1,27 @@
+header{
+    background-color: rgb(67, 86, 86);
+    height: 15%;
+   
+}
+h2{
+    padding-top: 15px;
+    color: white;
+  text-align: center;
+  margin-left: 520px;
+}
+
+li{
+    list-style: none;
+    margin-top: 20px;
+    margin-left: 400px;
+    
+}
+a{
+    color:white;
+    padding: 15px;
+    border: 1px solid gainsboro;
+    background-color: rgb(55, 71, 35);
+}
+a:hover{
+    background-color:rgb(40, 95, 124);
+}

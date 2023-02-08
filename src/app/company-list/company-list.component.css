@@ -1,0 +1,22 @@
+.fluid-container{
+    height: 600px;
+    text-align: center;
+}
+.companyList{
+    height: 75%;
+    width: 80%;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.companyDetails{
+    display: flex;
+    gap: 30px;
+}
+.details{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+p{
+    margin-top: -40px;
+  margin-left: 470px;
+}
