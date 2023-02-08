@@ -9,7 +9,7 @@ import company from '../../assets/data/company.json'
 })
 export class CompanyListComponent implements OnInit {
   
-   showModel:boolean=false;
+   showModal:boolean=false;
   public companyList: { id: number, Name: string, Revenue: string, Establish_Year: number, Employee_no: number, Industry: string ,image:string,CEO:string,headquarter:string,Expenditure:string,Profit:string,EmployeeDeatails:[]}[] = company
     
   companyDetails: { id: number, Name: string, Revenue: string, Establish_Year: number, Employee_no: number, Industry: string ,image:string,CEO:string,headquarter:string,Expenditure:string,Profit:string,EmployeeDeatails:[]};
@@ -22,22 +22,22 @@ export class CompanyListComponent implements OnInit {
   ngOnInit(): void {
   }
   showCompanyDetails(index:number,popup:any){
-   
+   this.showModal = true;
     this.modal_popup.open(popup)
     this.companyDetails = this.companyList[index]
    
     
   }
   showEmployeeDetails(index:number,popup:any){
-    
-    this.showModel=true;
+
+    this.showModal=true;
     this.modal_popup.open(popup);
     this.companyDetails = this.companyList[index]
     this.EmployeeDeatails = this.companyList[index].EmployeeDeatails;
 
   }
   onClse(){
-    this.showModel=false;
+    this.showModal=false;
   }
 
    

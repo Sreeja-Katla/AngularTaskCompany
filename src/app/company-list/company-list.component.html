@@ -18,23 +18,27 @@
                             data-bs-target="#popup">{{company.Name}}</a></td>
                     <td>{{company.Revenue}}</td>
                     <td>{{company.Establish_Year}}</td>
-                    <td><a (click)="showEmployeeDetails(i,employeepopup)" data-bs-toggle="modal"
-                        data-bs-target="#employeepopup">{{company.Employee_no}}</a></td>
+                    <td><a  data-bs-toggle="modal"
+                        data-bs-target="#employeepopup" (click)="showEmployeeDetails(i,employeepopup)">{{company.Employee_no}}</a></td>
                     <td>{{company.Industry}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+
    
+    
     <app-footer></app-footer>
 </div>
 
 <!-- Company details popup -->
-<ng-template #popup let-modal >
 
+<ng-template #popup let-modal >
+    <div class="container" *ngIf="showModal">
     <div class="modal-header">
-         <h2  style="text-align: center;"><b>{{companyDetails.Name}}</b></h2>
-         <button type="button" class="close" data-dismiss="modal" >&times;</button>
+         <h2><b>{{companyDetails.Name}}</b></h2>
+         <button type="button" class="close" data-dismiss="modal"  (click)="onClse()">&times;</button>
 
       </div>
 
@@ -48,12 +52,13 @@
 
         </div>
     </div>
-
+    </div>
 </ng-template >
 
+
 <!-- Employee Details Popup -->
-<ng-template #employeepopup let-modal>
-    <!-- <div id="myModal" class="modal fade" role="dialog"> -->
+<ng-template #employeepopup let-modal> 
+    <div class="container" *ngIf="showModal">
         <div class="modal-header">
             <h2  style="text-align: center;"><b>{{companyDetails.Name}}</b></h2>
             <button type="button" class="close" (click)="onClse()" data-dismiss="modal">&times;</button>
