@@ -11,7 +11,7 @@
         "headquarter":"Hyderabad",
         "Expenditure":"$6.195B",
         "Profit":"15%",
-        "EmployeeDeatails":[
+        "EmployeeDetails":[
           {
            "Name":"Sreeja",
            "Experience":" 1 yr",
@@ -46,7 +46,7 @@
         "headquarter":"pune",
         "Expenditure":"$9.195B",
         "Profit":"13.14%",
-        "EmployeeDeatails":[
+        "EmployeeDetails":[
           {
            "Name":"Sreeja",
            "Experience":" 1 yr",
@@ -76,7 +76,7 @@
         "headquarter":"mumbai",
         "Expenditure":"$7.195B",
         "Profit":"14%",
-        "EmployeeDeatails":[
+        "EmployeeDetails":[
           {
            "Name":"Sreeja",
            "Experience":" 1 yr",
@@ -100,7 +100,7 @@
         "headquarter":" Bangalore",
         "Expenditure":"$6.195B",
         "Profit":"12%",
-        "EmployeeDeatails":[
+        "EmployeeDetails":[
           {
            "Name":"Sreeja",
            "Experience":" 1 yr",

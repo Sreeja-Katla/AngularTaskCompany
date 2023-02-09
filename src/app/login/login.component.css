@@ -20,6 +20,7 @@ input{
 }
 .buttons {
     margin-top: 20px;
+    margin-left: 20px;
 }
 button{
     margin-right: 20px;
@@ -30,7 +31,8 @@ button{
 input.ng-invalid.ng-touched{
     border: 2px solid red;
 }
-span{
+small{
     color: red;
+    margin-left: 50px;
 }
 

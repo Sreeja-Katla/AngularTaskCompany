@@ -34,11 +34,13 @@
 
 <!-- Company details popup -->
 
+
 <ng-template #popup let-modal >
+
     <div class="container" *ngIf="showModal">
     <div class="modal-header">
          <h2><b>{{companyDetails.Name}}</b></h2>
-         <button type="button" class="close" data-dismiss="modal"  (click)="onClse()">&times;</button>
+         <button type="button" class="close" data-dismiss="modal"  (click)="onClose()">&times;</button>
 
       </div>
 
@@ -61,7 +63,7 @@
     <div class="container" *ngIf="showModal">
         <div class="modal-header">
             <h2  style="text-align: center;"><b>{{companyDetails.Name}}</b></h2>
-            <button type="button" class="close" (click)="onClse()" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" (click)="onClose()" data-dismiss="modal">&times;</button>
         </div>
 
         <table class="table table-bordered table-striped">
@@ -73,7 +75,7 @@
                    
                 </tr>
             </thead>
-            <tbody *ngFor="let Employee of EmployeeDeatails">
+            <tbody *ngFor="let Employee of EmployeeDetails">
                 <tr>
                     <td>{{Employee.Name}}</td>
                     <td>{{Employee.Experience}}</td>

@@ -11,11 +11,11 @@ import credentials from '../../assets/data/credentials.json'
 export class LoginComponent implements OnInit{
     
   title="reactiveForm";
-  public userList:{id:number,name:string,email:string,password:number}[]=credentials;
+  public userList:{id:number,name:string,email:string,password:string}[]=credentials;
   
-   reactiveForm : FormGroup;
+  reactiveForm : FormGroup;
   userName: string;
-  userPassword: any;
+  userPassword: string;
    constructor( public routing :Router){}
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ this.userPassword= this.reactiveForm.value.userPassword;
 
   for (let i = 0;i < this.userList.length;i++) {
 
-   if( this.userName == this.userList[i].name  && this.userPassword == this.userList[i].password  ){
+   if( this.userName == this.userList[i].name  && this.userPassword == this.userList[i].password ){
     this.routing.navigate(['/companyList'])
    }
     else{
@@ -44,7 +44,7 @@ this.userPassword= this.reactiveForm.value.userPassword;
 }
 
 onReset(){
-  this.reactiveForm.value.userName=""
+  this.reactiveForm.reset();
 }
 
 }
