@@ -42,21 +42,21 @@ export class CompanyListComponent implements OnInit {
    
     this.modal_popup.dismissAll();
   }
-  openModalWithComponent() {
-    const initialState: ModalOptions = {
-      initialState: {
-        list: [
-          'Open a modal with component',
-          'Pass your data',
-          'Do something else',
-          '...'
-        ],
-        title: 'Modal with component'
-      }
-    };
-    this.bsModalRef = this.modalService.show(CompanydetailsComponent, initialState);
-    this.bsModalRef.content.closeBtnName = 'Close';
-  }
+  // openModalWithComponent() {
+  //   const initialState: ModalOptions = {
+  //     initialState: {
+  //       list: [
+  //         'Open a modal with component',
+  //         'Pass your data',
+  //         'Do something else',
+  //         '...'
+  //       ],
+  //       title: 'Modal with component'
+  //     }
+  //   };
+  //   this.bsModalRef = this.modalService.show(CompanydetailsComponent, initialState);
+  //   this.bsModalRef.content.closeBtnName = 'Close';
+  // }
 
    
 }
