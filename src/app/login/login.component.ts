@@ -1,50 +1,48 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import credentials from '../../assets/data/credentials.json'
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-    
-  title="reactiveForm";
-  public userList:{id:number,name:string,email:string,password:string}[]=credentials;
-  
-  reactiveForm : FormGroup;
-  userName: string;
-  userPassword: string;
-   constructor( public routing :Router){}
+export class LoginComponent implements OnInit {
+
+  title = "reactiveForm";
+  public userList: { id: number, name: string, email: string, password: string }[] = credentials;
+
+  public reactiveForm: FormGroup;
+  public userName: string;
+  public userPassword: string;
+
+  constructor(public routing: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
-   
+
     this.reactiveForm = new FormGroup({
 
       userName: new FormControl(null, Validators.required),
       userPassword: new FormControl(null, Validators.required),
-  }); 
+    });
   }
+  public loginSuccess: boolean = true
+  onSubmit(): void {
 
-onSubmit(){
+    this.userName = this.reactiveForm.value.userName;
+    this.userPassword = this.reactiveForm.value.userPassword;
 
-this.userName= this.reactiveForm.value.userName;
-this.userPassword= this.reactiveForm.value.userPassword;
-
-  for (let i = 0;i < this.userList.length;i++) {
-
-   if( this.userName == this.userList[i].name  && this.userPassword == this.userList[i].password ){
-    this.routing.navigate(['/companyList'])
-   }
-    else{
-      // alert("please enter correct credentials..")
+    this.userList.filter(elem => elem.name === this.userName &&  elem.password === this.userPassword);{
+      this.routing.navigate(['/companyList']);
+        this.authService.loggedIn(this.loginSuccess);    
     }
+ 
   }
-}
 
-onReset(){
-  this.reactiveForm.reset();
-}
+  onReset(): void {
+    this.reactiveForm.reset();
+  }
 
 }

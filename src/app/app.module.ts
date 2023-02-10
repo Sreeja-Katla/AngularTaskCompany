@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CompanydetailsComponent } from './companydetails/companydetails.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     CompanyListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CompanydetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
