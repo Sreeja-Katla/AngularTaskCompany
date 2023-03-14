@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,8 @@ import { CompanyListComponent } from './company-list/company-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
+import { CreateCompanyComponent } from './create-company/create-company.component';
+import { BnNgIdleService } from 'bn-ng-idle'; // import bn-ng-idle service
 
 @NgModule({
   declarations: [
@@ -19,16 +21,17 @@ import { CompanydetailsComponent } from './companydetails/companydetails.compone
     CompanyListComponent,
     HeaderComponent,
     FooterComponent,
-    CompanydetailsComponent
+    CompanydetailsComponent,
+    CreateCompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ModalModule
-   
+
   ],
-  providers: [],
+  providers: [BsModalService,BsModalRef,BnNgIdleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

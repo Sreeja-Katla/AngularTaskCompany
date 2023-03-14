@@ -1,5 +1,6 @@
-<div>
+<!-- <div>
     <app-header></app-header>
+    <button class="btn btn-success" (click)="addCompany()">Add Company</button>
 
     <div class="container">
         <table class="table table-bordered table-striped container">
@@ -14,8 +15,8 @@
             </thead>
             <tbody *ngFor="let company of companyList,let i=index">
                 <tr>
-                    <td><a (click)="showCompanyDetails(i,popup)" data-bs-toggle="modal"
-                            data-bs-target="#popup">{{company.Name}}</a></td>
+                    <td><a (click)="showCompanyDetails(company)"
+                            >{{company.Name}}</a></td>
                     <td>{{company.Revenue}}</td>
                     <td>{{company.Establish_Year}}</td>
                     <td><a data-bs-toggle="modal" data-bs-target="#employeepopup"
@@ -30,10 +31,10 @@
 
 
     <app-footer></app-footer>
-</div>
+</div> -->
     <!-- Company details popup -->
-    
-        <ng-template #popup let-modal>
+
+        <!-- <ng-template #popup let-modal>
 
             <div class="card">
                 <div class="modal-header">
@@ -53,12 +54,12 @@
                     </div>
                 </div>
             </div>
-        </ng-template>
-    
+        </ng-template> -->
+
 
     <!-- Employee Details Popup -->
-   
-        <ng-template #employeepopup let-modal>
+
+        <!-- <ng-template #employeepopup let-modal>
             <div class="card">
                 <div class="modal-header">
                     <h2 style="text-align: center;"><b>{{companyDetails.Name}}</b></h2>
@@ -84,5 +85,5 @@
                     </tbody>
                 </table>
             </div>
-        </ng-template>
-   
+        </ng-template> -->
+

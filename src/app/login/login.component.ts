@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     this.reactiveForm = new FormGroup({
 
       userName: new FormControl(null, Validators.required),
@@ -34,11 +35,16 @@ export class LoginComponent implements OnInit {
     this.userName = this.reactiveForm.value.userName;
     this.userPassword = this.reactiveForm.value.userPassword;
 
-    this.userList.filter(elem => elem.name === this.userName &&  elem.password === this.userPassword);{
-      this.routing.navigate(['/companyList']);
-        this.authService.loggedIn(this.loginSuccess);    
-    }
- 
+    this.userList.filter(elem =>{
+
+     if(elem.name === this.userName &&  elem.password === this.userPassword){
+      localStorage.setItem("userDetails",JSON.stringify(elem))
+
+        this.routing.navigate(['/companyList']);
+          this.authService.loggedIn(this.loginSuccess);
+      }
+    })
+
   }
 
   onReset(): void {
